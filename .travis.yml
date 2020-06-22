@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 14
+cache: yarn
+deploy:
+  provider: heroku
+  api_key:
+    secure: nez39mb5yYx8nYrXsfiRe1vBLFev7uN2DVHHYZ3I4/PWH+x8KyB+vdj0IiiZtMH1PGMtoWesJislKzmRNJl3qqVly4FB9ww4A8F9XapqeJOkfU9/tiHv3D9yEDkkFbPJkF+hFQqELnPu25Yi+O2Jycwtx8UIBmwR5h/DHxKYdp3OjfYwLpC6sASMpW+kDupmQ9dP0hpfShFJZnlOgXOIZdEFQo78LP/Etw6lGrItHH39yGjP2ln9RiW6N58H3i0RlfTckrrJmqD4SbW6z03KkFHn4F54KOAfHvY1qE2AdeXPmR0Ctup3PrZWYguMCZhYGcgfc2jZAWWWeTyM2U2lN7jtzPo2FyIwyy6Y+uCDMAy0AMrZ1WdxvvVYojANB/YX47rls4KyjI+GtakOk6cEnMaBNx4A32tZpIzOXm1yP+vkGsR5ve3jHpb0l52TO1JHRe93jRyDNdQvab0pSo5SKge/w3eP90kxfhikbIw0lIoldQn92uhabkUx/SxSxfV7qwMMyEki7tjXFjITMUZHZZqvfQASnc0OkLFEvppbXD1akodKPI/Km4gz5AHgpPgjye2/sKQ1eZVkhd/5nmysSzfqrjBYXI16sXFDEFvspcNgPuNulSYUO+4wTZvwBEX4OCtEUHat76zUJ6r6Xhj3LItL7+xtG/3hP2H5eEMqXGo=
+  app: asteffey-url-shortener
+  on:
+    repo: asteffey/url-shortener-microservice
+  skip_cleanup: true
