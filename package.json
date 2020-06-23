@@ -10,7 +10,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.5.9",
-    "mongoose": "^5.9.18"
+    "mongoose": "^5.9.18",
+    "url-regex": "^5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
