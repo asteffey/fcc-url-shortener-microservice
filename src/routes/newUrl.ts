@@ -13,7 +13,7 @@ newUrl.post('/', ({ body: { url } }, res, next) => {
     ShortUrl.newShortUrl(url)
       .then(({ originalUrl, shortId }) => res.json({
         original_url: originalUrl,
-        short_url: `${baseUrl}/${shortId}`
+        short_url: `${baseUrl}/api/shorturl/${shortId}`
       })).catch(err => next(err))
   } else {
     res.status(400)
