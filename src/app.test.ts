@@ -10,6 +10,7 @@ describe('url shortener api', () => {
     originalUrl: 'http://known.com',
     shortId: '12345678'
   }
+  const invalid = 'http:notagoodurl@com'
   const validShortUrl = expect.stringMatching(new RegExp(`^${baseUrl}/[a-zA-Z0-9_-]{8}$`))
 
   beforeAll(async () => {
@@ -45,5 +46,13 @@ describe('url shortener api', () => {
     expect(body.original_url).toEqual(unknown)
     expect(body.short_url).toEqual(validShortUrl)
     expect(body.short_url).not.toEqual(`${baseUrl}/${known.shortId}`)
+  })
+
+  it('returns error for invalid url', async () => {
+    const { status, text } = await request(app)
+      .post('/api/shorturl/new')
+      .send(`url=${invalid}`)
+    expect(status).toEqual(400)
+    expect(text).toMatch(/is not a valid URL/)
   })
 })
