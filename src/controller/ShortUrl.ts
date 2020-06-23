@@ -23,6 +23,11 @@ export async function newShortUrl (originalUrl: string) {
   }
 }
 
+export async function getOriginalUrl (shortId: string) {
+  const entry = await ShortUrl.findOne({ shortId })
+  return entry?.originalUrl
+}
+
 function randomId () {
   return base64url(crypto.randomBytes(6))
 }
