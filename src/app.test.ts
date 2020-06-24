@@ -10,7 +10,7 @@ describe('url shortener api', () => {
     originalUrl: 'http://known.com',
     shortId: '12345678'
   }
-  const invalidUrl = 'http:notagoodurl@com'
+  const invalidUrl = 'http@notagoodurl'
   const toUrl = (shortId: string) => `${baseUrl}/api/shorturl/${shortId}`
   const validShortUrl = expect.stringMatching(new RegExp(`^${toUrl('[a-zA-Z0-9_-]{8}')}$`))
 

@@ -1,4 +1,4 @@
-import urlRegex from 'url-regex'
+import isUrl from 'is-url-superb'
 import { Router } from 'express'
 import { urlencoded } from 'body-parser'
 import { baseUrl } from '../config'
@@ -9,7 +9,7 @@ const newUrl = Router()
 newUrl.use(urlencoded({ extended: false }))
 
 newUrl.post('/', ({ body: { url } }, res, next) => {
-  if (urlRegex({ exact: true }).test(url)) {
+  if (isUrl(url)) {
     ShortUrl.newShortUrl(url)
       .then(({ originalUrl, shortId }) => res.json({
         original_url: originalUrl,
